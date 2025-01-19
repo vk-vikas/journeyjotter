@@ -1,6 +1,13 @@
 import React from "react";
+import SearchForm from "@/components/SearchForm";
 
-const page = () => {
+const page = async ({
+  searchParams,
+}: {
+  searchParams: Promise<{ query?: string }>;
+}) => {
+  const query = (await searchParams).query;
+
   return (
     <>
       <section className="pink_container">
@@ -10,6 +17,7 @@ const page = () => {
         <p className="sub-heading !max-w-3xl">
           Share perfect trvale guides for the world to read !
         </p>
+        <SearchForm query={query} />
       </section>
     </>
   );
