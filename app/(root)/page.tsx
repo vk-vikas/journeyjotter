@@ -1,6 +1,8 @@
 import React from "react";
 import SearchForm from "@/components/SearchForm";
 import TravelCard from "@/components/TravelCard";
+import { client } from "@/sanity/lib/client";
+import { TRIPS_QUERY } from "@/sanity/lib/queries";
 
 const page = async ({
   searchParams,
@@ -8,19 +10,7 @@ const page = async ({
   searchParams: Promise<{ query?: string }>;
 }) => {
   const query = (await searchParams).query;
-
-  const posts = [
-    {
-      _createdAt: new Date(),
-      views: 55,
-      author: { _id: 1 },
-      description: "desc",
-      image:
-        "https://www.onmycanvas.com/wp-content/uploads/2020/08/Butterfly-beach-goa-front-view-1024x576.jpg",
-      category: "goa",
-      title: "South Goa Beaches",
-    },
-  ];
+  const posts = await client.fetch(TRIPS_QUERY);
 
   return (
     <>
