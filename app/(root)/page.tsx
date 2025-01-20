@@ -36,7 +36,7 @@ const page = async ({
 
       <section className="section_container">
         <p className="text-30-semibold">
-          {query ? `Search results for "${query}"` : "All Startups"}
+          {query ? `Search results for "${query}"` : "All Trips"}
         </p>
 
         <ul className="mt-7 card_grid">
@@ -45,7 +45,7 @@ const page = async ({
               <TravelCard key={post?._id} post={post} />
             ))
           ) : (
-            <p className="no-results">No startups found</p>
+            <p className="no-results">No Trips found</p>
           )}
         </ul>
       </section>
