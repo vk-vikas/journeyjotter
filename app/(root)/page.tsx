@@ -1,6 +1,6 @@
 import React from "react";
 import SearchForm from "@/components/SearchForm";
-import TravelCard from "@/components/TravelCard";
+import TravelCard, { TravelTypeCard } from "@/components/TravelCard";
 import { client } from "@/sanity/lib/client";
 import { TRIPS_QUERY } from "@/sanity/lib/queries";
 

@@ -4,6 +4,9 @@ import { EyeIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { Author, Trip } from "@/sanity/types";
+
+export type TravelTypeCard = Omit<Trip, "author"> & { author?: Author };
 
 const TravelCard = ({ post }: { post: TravelTypeCard }) => {
   const {
