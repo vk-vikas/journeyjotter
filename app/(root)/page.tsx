@@ -1,8 +1,8 @@
 import React from "react";
 import SearchForm from "@/components/SearchForm";
 import TravelCard, { TravelTypeCard } from "@/components/TravelCard";
-import { client } from "@/sanity/lib/client";
 import { TRIPS_QUERY } from "@/sanity/lib/queries";
+import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 
 const page = async ({
   searchParams,
@@ -10,7 +10,8 @@ const page = async ({
   searchParams: Promise<{ query?: string }>;
 }) => {
   const query = (await searchParams).query;
-  const posts = await client.fetch(TRIPS_QUERY);
+  const params = { search: query || null };
+  const { data: posts } = await sanityFetch({ query: TRIPS_QUERY, params });
 
   return (
     <>
@@ -39,6 +40,7 @@ const page = async ({
           )}
         </ul>
       </section>
+      <SanityLive />
     </>
   );
 };
