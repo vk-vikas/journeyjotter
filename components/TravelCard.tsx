@@ -61,7 +61,7 @@ const TravelCard = ({ post }: { post: TravelTypeCard }) => {
           <p className="text-16-medium">{category}</p>
         </Link>
         <Button className="startup-card_btn" asChild>
-          <Link href={`/startup/${_id}`}>Details</Link>
+          <Link href={`/trip/${_id}`}>Details</Link>
         </Button>
       </div>
     </li>
