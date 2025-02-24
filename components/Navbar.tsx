@@ -14,8 +14,12 @@ const Navbar = async () => {
         <Link href="/">
           <div>
             {" "}
-            <Image src="/logo.png" alt="logo" width={44} height={30} />
-            journeyjotter
+            <div className="flex justify-between items-center">
+              <Image src="/logo.png" alt="logo" width={44} height={30} />
+              <p className="font-bold text-xl text-gray-700 px-2">
+                Journery Jotter
+              </p>
+            </div>
           </div>
         </Link>
 
